@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Web Design - LMSColab</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Figtree', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased">
+    <div class="min-h-screen bg-gray-100">
+
+        <!-- Navigation -->
+        <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="shrink-0 flex items-center">
+                            <a href="dashboard.html" class="flex items-center space-x-2 group">
+                                <div class="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold group-hover:bg-blue-700 transition-colors">L</div>
+                                <span class="font-bold text-xl text-slate-800 tracking-tight hidden sm:block">LMS<span class="text-blue-600">Colab</span></span>
+                            </a>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <a href="dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Dashboard</a>
+                            <a href="courses.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Katalog Kursus</a>
+                            <a href="instructor.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Kelola Kursus (Instruktur)</a>
+                            <a href="admin-users.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Kelola Akun (Admin)</a>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex sm:items-center sm:ms-6">
+                        <div class="flex items-center bg-yellow-50 px-3 py-1.5 rounded-full border border-yellow-200 shadow-sm me-4">
+                            <span class="text-yellow-600 font-bold text-sm">🔥 7 Hari</span>
+                        </div>
+                        <div x-data="{ open: false }" class="relative">
+                            <button @click="open = !open" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                <div>Budi Santoso</div>
+                                <div class="ms-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                                </div>
+                            </button>
+                            <div x-show="open" @click.away="open = false" x-cloak class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="-me-2 flex items-center sm:hidden">
+                        <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path :class="{'hidden': open, 'inline-flex': !open}" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                <path :class="{'hidden': !open, 'inline-flex': open}" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div :class="{'block': open, 'hidden': !open}" class="hidden sm:hidden">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="dashboard.html" class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Dashboard</a>
+                    <a href="courses.html" class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Katalog Kursus</a>
+                </div>
+                <div class="pt-4 pb-1 border-t border-gray-200">
+                    <div class="px-4">
+                        <div class="font-medium text-base text-gray-800">Budi Santoso</div>
+                        <div class="font-medium text-sm text-gray-500">budi@example.com</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Course Hero Header -->
+            <div class="bg-slate-900 text-white py-16 px-6 border-b border-slate-800">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Responsive Web Design Certification</h1>
+                    <p class="text-xl text-slate-300 mb-8 max-w-3xl leading-relaxed">Pelajari dasar-dasar HTML dan CSS untuk membangun halaman web yang responsif. Dari elemen dasar hingga Flexbox dan CSS Grid yang modern.</p>
+
+                    <!-- Enrolled State: Continue / Progress -->
+                    <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-8">
+                        <a href="lesson.html" class="inline-block text-center bg-blue-600 text-white px-8 py-3.5 font-semibold text-lg hover:bg-blue-700 transition-colors rounded-lg shadow-sm w-full md:w-auto border border-blue-500">Lanjut Belajar</a>
+                        <div class="flex items-center w-full md:w-72 bg-slate-800/50 p-3 rounded-xl border border-slate-700">
+                            <div class="w-full bg-slate-700 h-2.5 rounded-full mr-4 overflow-hidden">
+                                <div class="bg-green-500 h-full rounded-full transition-all duration-1000" style="width: 65%"></div>
+                            </div>
+                            <span class="font-bold text-green-400 text-lg">65%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curriculum -->
+            <div class="py-12 bg-slate-50 min-h-screen">
+                <div class="max-w-4xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                    <h2 class="text-2xl font-bold text-slate-800 mb-2">Kurikulum Kursus</h2>
+                    
+                    <!-- Module 1 — Open by default -->
+                    <div x-data="{ open: true }" class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+                        <button @click="open = !open" class="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 focus:outline-none transition-colors border-b border-transparent" :class="{ 'border-slate-100 bg-slate-50/50': open }">
+                            <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-left">
+                                <span class="text-slate-400 font-medium mr-2">Bab 1:</span> HTML Dasar
+                            </h2>
+                            <svg x-show="!open" class="w-6 h-6 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg x-show="open" x-cloak class="w-6 h-6 text-slate-600 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        
+                        <div x-show="open" x-collapse x-cloak class="bg-white p-6 pt-2">
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+
+                                <!-- Lesson 1 — Completed -->
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-green-50 border-green-200 hover:border-green-300">
+                                    <div class="absolute -top-2 -right-2 bg-green-500 text-white rounded-full p-1 shadow-sm">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <svg class="w-8 h-8 text-green-600 mb-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2 group-hover:text-slate-900">Pengenalan HTML</span>
+                                </a>
+
+                                <!-- Lesson 2 — Completed -->
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-green-50 border-green-200 hover:border-green-300">
+                                    <div class="absolute -top-2 -right-2 bg-green-500 text-white rounded-full p-1 shadow-sm">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <svg class="w-8 h-8 text-green-600 mb-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2 group-hover:text-slate-900">Elemen &amp; Tag</span>
+                                </a>
+
+                                <!-- Lesson 3 — Completed -->
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-green-50 border-green-200 hover:border-green-300">
+                                    <div class="absolute -top-2 -right-2 bg-green-500 text-white rounded-full p-1 shadow-sm">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <svg class="w-8 h-8 text-green-600 mb-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2 group-hover:text-slate-900">Form &amp; Input</span>
+                                </a>
+
+                                <!-- Lesson 4 — Not completed -->
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">4</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2 group-hover:text-slate-900">Tabel HTML</span>
+                                </a>
+
+                                <!-- Lesson 5 — Not completed -->
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">5</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2 group-hover:text-slate-900">Semantik HTML</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 — Collapsed -->
+                    <div x-data="{ open: false }" class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+                        <button @click="open = !open" class="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 focus:outline-none transition-colors border-b border-transparent" :class="{ 'border-slate-100 bg-slate-50/50': open }">
+                            <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-left">
+                                <span class="text-slate-400 font-medium mr-2">Bab 2:</span> CSS Dasar
+                            </h2>
+                            <svg x-show="!open" class="w-6 h-6 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg x-show="open" x-cloak class="w-6 h-6 text-slate-600 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        
+                        <div x-show="open" x-collapse x-cloak class="bg-white p-6 pt-2">
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-green-50 border-green-200 hover:border-green-300">
+                                    <div class="absolute -top-2 -right-2 bg-green-500 text-white rounded-full p-1 shadow-sm">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <svg class="w-8 h-8 text-green-600 mb-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">Selektor CSS</span>
+                                </a>
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">2</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">Box Model</span>
+                                </a>
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">3</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">Typography</span>
+                                </a>
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">4</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">Colors &amp; Backgrounds</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 — Collapsed -->
+                    <div x-data="{ open: false }" class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+                        <button @click="open = !open" class="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 focus:outline-none transition-colors border-b border-transparent" :class="{ 'border-slate-100 bg-slate-50/50': open }">
+                            <h2 class="text-xl md:text-2xl font-bold text-slate-800 text-left">
+                                <span class="text-slate-400 font-medium mr-2">Bab 3:</span> Flexbox &amp; Grid
+                            </h2>
+                            <svg x-show="!open" class="w-6 h-6 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg x-show="open" x-cloak class="w-6 h-6 text-slate-600 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        
+                        <div x-show="open" x-collapse x-cloak class="bg-white p-6 pt-2">
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">1</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">Intro Flexbox</span>
+                                </a>
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">2</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">Flex Properties</span>
+                                </a>
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">3</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">CSS Grid Basics</span>
+                                </a>
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">4</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">Grid Areas</span>
+                                </a>
+                                <a href="lesson.html" class="flex flex-col items-center justify-center p-4 border rounded-xl text-center transition-all duration-200 relative group bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm">
+                                    <span class="text-3xl font-extrabold text-slate-300 group-hover:text-blue-400 mb-1 transition-colors">5</span>
+                                    <span class="text-xs font-semibold leading-relaxed text-slate-700 mt-2">Responsive Design</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>

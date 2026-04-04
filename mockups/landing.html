@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LMSColab - Platform Belajar Coding Kolaboratif</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Figtree', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="landing.html" class="flex items-center space-x-2 group">
+                    <div class="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold group-hover:bg-blue-700 transition-colors">L</div>
+                    <span class="font-bold text-xl text-slate-800 tracking-tight">LMS<span class="text-blue-600">Colab</span></span>
+                </a>
+                <div class="hidden sm:flex items-center space-x-6">
+                    <a href="#about" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">Tentang</a>
+                    <a href="#benefits" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">Keunggulan</a>
+                    <a href="#how-it-works" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">Cara Belajar</a>
+                    <a href="#courses" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">Kursus</a>
+                    <a href="login.html" class="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">Masuk</a>
+                    <a href="login.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm">Daftar Gratis</a>
+                </div>
+                <!-- Mobile Burger -->
+                <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="sm:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden sm:hidden pb-4 space-y-2">
+                <a href="#about" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-blue-50 rounded-md">Tentang</a>
+                <a href="#benefits" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-blue-50 rounded-md">Keunggulan</a>
+                <a href="#how-it-works" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-blue-50 rounded-md">Cara Belajar</a>
+                <a href="#courses" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-blue-50 rounded-md">Kursus</a>
+                <a href="login.html" class="block px-3 py-2 text-sm font-medium text-blue-600">Masuk</a>
+                <a href="login.html" class="block px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-semibold text-center">Daftar Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 overflow-hidden">
+        <!-- Decorative shapes -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-yellow-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="inline-block bg-yellow-400 text-blue-900 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-6">Kolaborasi HIMTIF &amp; HIMA PTI</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Belajar Coding<br>
+                    <span class="text-yellow-300">Interaktif &amp; Kolaboratif</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+                    LMSColab adalah platform pembelajaran coding yang dirancang khusus untuk mahasiswa. Belajar melalui video, praktik langsung, dan modul interaktif — semuanya gratis.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="login.html" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg">
+                        Mulai Belajar Sekarang →
+                    </a>
+                    <a href="#about" class="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors">
+                        Pelajari Lebih Lanjut
+                    </a>
+                </div>
+                <!-- Stats row -->
+                <div class="mt-14 flex flex-wrap gap-8 justify-center text-white/90">
+                    <div class="text-center">
+                        <div class="text-3xl font-extrabold">500+</div>
+                        <div class="text-sm text-blue-200">Mahasiswa Aktif</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-extrabold">25+</div>
+                        <div class="text-sm text-blue-200">Kursus Tersedia</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-extrabold">100+</div>
+                        <div class="text-sm text-blue-200">Lesson Interaktif</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT WEBSITE ==================== -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Tentang Platform</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2 mb-6">Apa Itu LMSColab?</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                        LMSColab adalah <strong>Learning Management System</strong> yang dibangun sebagai proyek kolaborasi antara <strong>HIMTIF</strong> (Himpunan Mahasiswa Teknik Informatika) dan <strong>HIMA PTI</strong> (Himpunan Mahasiswa Pendidikan Teknik Informatika).
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        Platform ini menyediakan lingkungan belajar coding yang terstruktur dan interaktif, dilengkapi dengan editor kode langsung, kuis, serta sistem gamifikasi untuk menjaga motivasi belajar.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="flex -space-x-2">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm border-2 border-white">H</div>
+                            <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-sm border-2 border-white">P</div>
+                        </div>
+                        <span class="text-sm text-gray-500">Kolaborasi antar himpunan mahasiswa</span>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 md:p-12">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl shrink-0">📚</div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg">Kurikulum Terstruktur</h3>
+                                <p class="text-gray-600 text-sm mt-1">Materi disusun dari dasar hingga mahir dalam modul-modul yang sistematis</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center text-white text-xl shrink-0">💻</div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg">Live Code Editor</h3>
+                                <p class="text-gray-600 text-sm mt-1">Tulis dan jalankan kode langsung di browser tanpa install apapun</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl shrink-0">🏆</div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg">Gamifikasi</h3>
+                                <p class="text-gray-600 text-sm mt-1">Sistem poin, streak, dan leaderboard untuk menjaga motivasi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BENEFITS ==================== -->
+    <section id="benefits" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Keunggulan</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Mengapa Belajar di LMSColab?</h2>
+                <p class="text-gray-600 text-lg">Platform yang dirancang khusus untuk kebutuhan belajar mahasiswa informatika.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-5">🎓</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">100% Gratis</h3>
+                    <p class="text-gray-600">Semua materi dan fitur dapat diakses tanpa biaya. Dibuat oleh mahasiswa, untuk mahasiswa.</p>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl mb-5">⚡</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Praktik Langsung</h3>
+                    <p class="text-gray-600">Tidak hanya teori — setiap lesson dilengkapi code editor untuk langsung praktik coding.</p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-5">📊</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Tracking Progress</h3>
+                    <p class="text-gray-600">Lihat kemajuan belajar melalui dashboard yang menampilkan heatmap aktivitas dan statistik.</p>
+                </div>
+                <!-- Benefit 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl mb-5">🔥</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Streak &amp; Poin</h3>
+                    <p class="text-gray-600">Sistem gamifikasi memotivasi belajar konsisten melalui daily streak dan leaderboard.</p>
+                </div>
+                <!-- Benefit 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-5">💬</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Komentar &amp; Diskusi</h3>
+                    <p class="text-gray-600">Bertanya dan berdiskusi dengan sesama mahasiswa langsung di setiap lesson.</p>
+                </div>
+                <!-- Benefit 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl mb-5">📱</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Responsif</h3>
+                    <p class="text-gray-600">Akses platform dari perangkat apapun — desktop, tablet, maupun smartphone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Cara Mulai</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Mulai Belajar dalam 3 Langkah</h2>
+                <p class="text-gray-600 text-lg">Prosesnya mudah dan cepat. Kamu bisa langsung belajar hari ini.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold mx-auto mb-5 shadow-lg shadow-blue-600/30">1</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Daftar Akun</h3>
+                    <p class="text-gray-600">Buat akun gratis dengan email kampusmu. Proses registrasi hanya butuh 1 menit.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center text-blue-900 text-3xl font-extrabold mx-auto mb-5 shadow-lg shadow-yellow-400/30">2</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Pilih Kursus</h3>
+                    <p class="text-gray-600">Jelajahi katalog kursus dan pilih topik yang ingin kamu pelajari — HTML, CSS, JavaScript, dan lainnya.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold mx-auto mb-5 shadow-lg shadow-blue-600/30">3</div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">Mulai Belajar!</h3>
+                    <p class="text-gray-600">Ikuti materi, praktik coding langsung di browser, kerjakan kuis, dan kumpulkan poin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LEARNING METHODS ==================== -->
+    <section class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-yellow-300 font-semibold text-sm uppercase tracking-wider">Metode Belajar</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-2 mb-4">Belajar dengan Berbagai Cara</h2>
+                <p class="text-blue-100 text-lg">Setiap lesson menggabungkan berbagai metode untuk pengalaman belajar optimal.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Method 1: Video -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
+                    <div class="text-4xl mb-4">🎬</div>
+                    <h3 class="font-bold text-xl mb-2">Video Pembelajaran</h3>
+                    <p class="text-blue-100 text-sm">Materi disampaikan melalui video penjelasan yang singkat dan mudah dipahami.</p>
+                </div>
+                <!-- Method 2: Praktik -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="font-bold text-xl mb-2">Praktik Koding</h3>
+                    <p class="text-blue-100 text-sm">Tulis kode langsung di live editor dan lihat hasilnya secara real-time di browser.</p>
+                </div>
+                <!-- Method 3: Modul -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
+                    <div class="text-4xl mb-4">📖</div>
+                    <h3 class="font-bold text-xl mb-2">Modul Interaktif</h3>
+                    <p class="text-blue-100 text-sm">Bacaan terstruktur dilengkapi kuis untuk menguji pemahaman pada setiap lesson.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COURSE PREVIEW ==================== -->
+    <section id="courses" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Kursus Populer</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Mulai dari Kursus Ini</h2>
+                <p class="text-gray-600 text-lg">Kursus paling diminati oleh mahasiswa. Semua gratis dan bisa langsung dimulai.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="h-44 bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
+                        <span class="text-6xl">🌐</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">Web Development</span>
+                            <span class="text-xs font-semibold bg-green-100 text-green-700 px-2.5 py-1 rounded-full">Pemula</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">Responsive Web Design</h3>
+                        <p class="text-gray-500 text-sm mb-4">Pelajari HTML, CSS, dan prinsip desain responsif dari nol.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-400">
+                            <span>5 Modul · 18 Lesson</span>
+                            <span>230 siswa</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <span class="text-6xl">⚙️</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">JavaScript</span>
+                            <span class="text-xs font-semibold bg-yellow-100 text-yellow-700 px-2.5 py-1 rounded-full">Menengah</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">JavaScript Algorithms</h3>
+                        <p class="text-gray-500 text-sm mb-4">Kuasai algoritma dan struktur data menggunakan JavaScript.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-400">
+                            <span>8 Modul · 42 Lesson</span>
+                            <span>185 siswa</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="h-44 bg-gradient-to-br from-blue-700 to-blue-800 flex items-center justify-center">
+                        <span class="text-6xl">🗄️</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">Database</span>
+                            <span class="text-xs font-semibold bg-green-100 text-green-700 px-2.5 py-1 rounded-full">Pemula</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">Dasar-Dasar SQL</h3>
+                        <p class="text-gray-500 text-sm mb-4">Belajar query database dari SELECT hingga JOIN dan subquery.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-400">
+                            <span>4 Modul · 22 Lesson</span>
+                            <span>142 siswa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="courses.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3.5 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors shadow-sm">
+                    Lihat Semua Kursus
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-12 md:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-400 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/3"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Siap Mulai Belajar Coding?</h2>
+                    <p class="text-blue-100 text-lg mb-8 max-w-xl mx-auto">Bergabung dengan ratusan mahasiswa yang sudah meningkatkan skill coding mereka di LMSColab. Gratis selamanya.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="login.html" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg">
+                            Daftar Sekarang — Gratis!
+                        </a>
+                        <a href="about.html" class="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors">
+                            Tentang Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-slate-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold">L</div>
+                        <span class="font-bold text-xl text-white tracking-tight">LMS<span class="text-blue-400">Colab</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed max-w-sm">
+                        Platform pembelajaran coding kolaboratif yang dibangun oleh mahasiswa untuk mahasiswa. Proyek kolaborasi HIMTIF &amp; HIMA PTI.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white text-sm mb-3">Platform</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="courses.html" class="hover:text-white transition-colors">Katalog Kursus</a></li>
+                        <li><a href="login.html" class="hover:text-white transition-colors">Masuk</a></li>
+                        <li><a href="login.html" class="hover:text-white transition-colors">Daftar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white text-sm mb-3">Tentang</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">HIMTIF</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">HIMA PTI</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 LMSColab. Kolaborasi HIMTIF &amp; HIMA PTI. Seluruh hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
