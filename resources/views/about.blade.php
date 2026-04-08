@@ -86,6 +86,9 @@
                                 <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">Database Design</span>
                                 <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">API Architecture</span>
                                 <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">Server &amp; Deployment</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">Kurikulum Design</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">Konten Pembelajaran</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">UI/UX Design</span>
                             </div>
                         </div>
                     </div>
@@ -108,9 +111,6 @@
                         <div class="space-y-3">
                             <h4 class="font-bold text-slate-700 text-sm uppercase tracking-wider">Kontribusi di LMSColab</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-yellow-50 text-yellow-700 text-xs font-semibold px-3 py-1.5 rounded-full">UX/UI Design</span>
-                                <span class="bg-yellow-50 text-yellow-700 text-xs font-semibold px-3 py-1.5 rounded-full">Kurikulum Design</span>
-                                <span class="bg-yellow-50 text-yellow-700 text-xs font-semibold px-3 py-1.5 rounded-full">Konten Pembelajaran</span>
                                 <span class="bg-yellow-50 text-yellow-700 text-xs font-semibold px-3 py-1.5 rounded-full">Quality Assurance</span>
                             </div>
                         </div>
