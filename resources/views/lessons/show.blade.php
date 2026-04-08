@@ -1,6 +1,6 @@
 <x-app-layout>
     <!-- Top Bar -->
-    <div class="bg-white text-slate-800 px-6 py-4 border-b border-slate-200 flex justify-between items-center shadow-sm sticky top-0 z-40">
+    <div class="bg-white text-slate-800 px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-200 flex justify-between items-center shadow-sm sticky top-0 z-40">
         <div class="text-sm md:text-base truncate flex items-center w-full max-w-7xl mx-auto">
             <span class="text-slate-500 hidden sm:inline font-medium">{{ $course->title }}</span> 
             <span class="mx-3 text-slate-300 hidden sm:inline">/</span> 
@@ -18,8 +18,8 @@
          @if($lesson->has_workspace) x-data="workspaceEditor()" @endif>
         
         <!-- Panel 1: Content / Reading -->
-        <div class="w-full @if($lesson->has_workspace) lg:w-3/12 @else md:w-7/12 @endif p-6 md:p-8 md:overflow-y-auto border-b md:border-b-0 md:border-r border-slate-200 bg-white" style="max-height: calc(100vh - 73px);">
-            <h1 class="text-2xl md:text-3xl font-extrabold mb-6 text-slate-900 leading-tight tracking-tight">{{ $lesson->title }}</h1>
+        <div class="w-full @if($lesson->has_workspace) lg:w-3/12 @else md:w-7/12 @endif p-4 sm:p-6 md:p-8 md:overflow-y-auto border-b md:border-b-0 md:border-r border-slate-200 bg-white" style="max-height: calc(100vh - 73px);">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold mb-4 sm:mb-6 text-slate-900 leading-tight tracking-tight">{{ $lesson->title }}</h1>
             
             @if($lesson->content_type === 'video')
                 <div class="aspect-video mb-8 rounded-xl overflow-hidden border border-slate-200 bg-slate-900 shadow-sm relative z-10">
@@ -33,14 +33,14 @@
                 </div>
             @endif
 
-            <div class="prose prose-md max-w-none prose-slate leading-relaxed font-sans mb-12">
+            <div class="prose prose-sm sm:prose-md max-w-none prose-slate leading-relaxed font-sans mb-8 sm:mb-12">
                 {!! nl2br(e($lesson->content)) !!}
             </div>
         </div>
 
         @if($lesson->has_workspace)
         <!-- Panel 2: Code Editor (Only if has_workspace) -->
-        <div class="w-full lg:w-5/12 bg-slate-900 border-b md:border-b-0 md:border-r border-slate-700 flex flex-col pt-2 h-screen lg:h-[calc(100vh-73px)]">
+        <div class="w-full lg:w-5/12 bg-slate-900 border-b md:border-b-0 md:border-r border-slate-700 flex flex-col pt-2 h-[60vh] sm:h-[70vh] lg:h-[calc(100vh-73px)]">
             <!-- Editor Tabs -->
             <div class="flex px-4 gap-1 mb-2">
                 <button @click="activeTab = 'html'" :class="{'bg-[#1e1e1e] text-green-400': activeTab === 'html', 'bg-slate-800 text-slate-400 hover:bg-slate-700': activeTab !== 'html'}" class="px-4 py-2 rounded-t-lg font-mono text-sm font-bold transition-colors">index.html</button>
@@ -74,8 +74,8 @@
             </div>
             @endif
 
-            <div class="p-6 flex-grow @if($lesson->has_workspace) lg:h-1/2 overflow-y-auto @endif">
-                <h3 class="font-bold @if($lesson->has_workspace) text-xl @else text-2xl @endif mb-6 text-slate-800">Evaluasi & Kelulusan</h3>
+            <div class="p-4 sm:p-6 flex-grow @if($lesson->has_workspace) lg:h-1/2 overflow-y-auto @endif">
+                <h3 class="font-bold @if($lesson->has_workspace) text-lg sm:text-xl @else text-xl sm:text-2xl @endif mb-4 sm:mb-6 text-slate-800">Evaluasi & Kelulusan</h3>
                 
                 <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
                      x-data="{

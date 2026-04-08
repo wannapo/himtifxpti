@@ -175,7 +175,7 @@
                         <span class="text-yellow-300 text-xl">⭐</span>
                         <h3 class="font-bold text-xl">Inklusivitas</h3>
                     </div>
-                    <p class="text-blue-100">Setiap mahasiswa berhak mendapat akses pendidikan coding berkualitas, tanpa batasan biaya atau latar belakang.</p>
+                    <p class="text-blue-100">Setiap siswa berhak mendapat akses pendidikan coding berkualitas, tanpa batasan biaya atau latar belakang.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                     <div class="flex items-center gap-3 mb-3">

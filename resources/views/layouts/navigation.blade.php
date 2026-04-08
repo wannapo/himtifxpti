@@ -100,6 +100,21 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.index')">
+                Katalog Kursus
+            </x-responsive-nav-link>
+            @auth
+                @if(auth()->user()->role === 'instructor' || auth()->user()->role === 'admin')
+                    <x-responsive-nav-link :href="route('instructor.dashboard')" :active="request()->routeIs('instructor.*')">
+                        {{ __('Kelola Kursus') }}
+                    </x-responsive-nav-link>
+                @endif
+                @if(auth()->user()->role === 'admin')
+                    <x-responsive-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')">
+                        {{ __('Kelola Akun') }}
+                    </x-responsive-nav-link>
+                @endif
+            @endauth
         </div>
 
         <!-- Responsive Settings Options -->
