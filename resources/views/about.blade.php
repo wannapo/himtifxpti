@@ -10,7 +10,7 @@
             <span class="inline-block bg-yellow-400 text-blue-900 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-6">Tentang Kami</span>
             <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
                 Dibangun oleh Mahasiswa,<br>
-                <span class="text-yellow-300">Untuk Mahasiswa</span>
+                <span class="text-yellow-300">Untuk Siswa</span>
             </h1>
             <p class="text-lg text-blue-100 max-w-2xl mx-auto">
                 LMSColab adalah proyek kolaborasi antara dua himpunan mahasiswa yang memiliki visi yang sama: menciptakan platform belajar coding yang inklusif dan berkualitas.

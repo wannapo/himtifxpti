@@ -16,7 +16,40 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+            @auth
+                @include('layouts.navigation')
+            @else
+                {{-- Public navbar for guest users --}}
+                <nav x-data="{ mobileOpen: false }" class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex justify-between h-16 items-center">
+                            <a href="{{ route('landing') }}" class="flex items-center space-x-2 group">
+                                <div class="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold group-hover:bg-blue-700 transition-colors">L</div>
+                                <span class="font-bold text-xl text-slate-800 tracking-tight">LMS<span class="text-blue-600">Colab</span></span>
+                            </a>
+                            <div class="hidden sm:flex items-center space-x-6">
+                                <a href="{{ route('landing') }}" class="text-sm font-medium {{ request()->routeIs('landing') ? 'text-blue-600' : 'text-gray-500 hover:text-blue-600' }} transition-colors">Beranda</a>
+                                <a href="{{ route('courses.index') }}" class="text-sm font-medium {{ request()->routeIs('courses.*') ? 'text-blue-600' : 'text-gray-500 hover:text-blue-600' }} transition-colors">Kursus</a>
+                                <a href="{{ route('about') }}" class="text-sm font-medium {{ request()->routeIs('about') ? 'text-blue-600' : 'text-gray-500 hover:text-blue-600' }} transition-colors">Tentang</a>
+                                <a href="{{ route('login') }}" class="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">Masuk</a>
+                                <a href="{{ route('register') }}" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm">Daftar Gratis</a>
+                            </div>
+                            <!-- Mobile Burger -->
+                            <button @click="mobileOpen = !mobileOpen" class="sm:hidden p-2">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                            </button>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div x-show="mobileOpen" x-cloak class="sm:hidden pb-4 space-y-2">
+                            <a href="{{ route('landing') }}" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-blue-50 rounded-md">Beranda</a>
+                            <a href="{{ route('courses.index') }}" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-blue-50 rounded-md">Kursus</a>
+                            <a href="{{ route('about') }}" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:bg-blue-50 rounded-md">Tentang</a>
+                            <a href="{{ route('login') }}" class="block px-3 py-2 text-sm font-medium text-blue-600">Masuk</a>
+                            <a href="{{ route('register') }}" class="block px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-semibold text-center">Daftar Gratis</a>
+                        </div>
+                    </div>
+                </nav>
+            @endauth
 
             <!-- Page Heading -->
             @isset($header)

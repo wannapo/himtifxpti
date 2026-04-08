@@ -70,7 +70,7 @@
                             <span class="font-bold text-xl text-white tracking-tight">LMS<span class="text-blue-400">Colab</span></span>
                         </div>
                         <p class="text-sm leading-relaxed max-w-sm">
-                            Platform pembelajaran coding kolaboratif yang dibangun oleh mahasiswa untuk mahasiswa. Proyek kolaborasi HIMTIF &amp; HIMA PTI.
+                            Platform pembelajaran coding kolaboratif yang dibangun oleh mahasiswa untuk Siswa. Proyek kolaborasi HIMTIF &amp; HIMA PTI.
                         </p>
                     </div>
                     <div>

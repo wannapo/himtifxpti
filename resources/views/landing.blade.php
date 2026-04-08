@@ -16,7 +16,7 @@
                     <span class="text-yellow-300">Interaktif &amp; Kolaboratif</span>
                 </h1>
                 <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-                    LMSColab adalah platform pembelajaran coding yang dirancang khusus untuk mahasiswa. Belajar melalui video, praktik langsung, dan modul interaktif — semuanya gratis.
+                    LMSColab adalah platform pembelajaran coding yang dirancang khusus untuk Siswa. Belajar melalui video, praktik langsung, dan modul interaktif semuanya gratis.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="{{ route('register') }}" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg">
@@ -107,7 +107,7 @@
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
                     <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-5">🎓</div>
                     <h3 class="font-bold text-xl text-slate-800 mb-2">100% Gratis</h3>
-                    <p class="text-gray-600">Semua materi dan fitur dapat diakses tanpa biaya. Dibuat oleh mahasiswa, untuk mahasiswa.</p>
+                    <p class="text-gray-600">Semua materi dan fitur dapat diakses tanpa biaya. Dibuat oleh mahasiswa, untuk Siswa.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
                     <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl mb-5">⚡</div>
