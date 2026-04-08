@@ -245,7 +245,7 @@
                     <p class="text-blue-100 text-lg mb-8 max-w-xl mx-auto">Bergabung dengan ratusan mahasiswa yang sudah meningkatkan skill coding mereka di LMSColab. Gratis selamanya.</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="{{ route('register') }}" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg">
-                            Daftar Sekarang — Gratis!
+                            Daftar Sekarang - Gratis!
                         </a>
                         <a href="{{ route('about') }}" class="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors">
                             Tentang Kami
