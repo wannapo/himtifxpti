@@ -89,7 +89,11 @@ return [
             'url' => env('DB_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
+<<<<<<< HEAD
             'database' => env('DB_DATABASE', 'sinauin'),
+=======
+            'database' => env('DB_DATABASE', 'laravel'),
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'charset' => env('DB_CHARSET', 'utf8'),
@@ -104,7 +108,11 @@ return [
             'url' => env('DB_URL'),
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '1433'),
+<<<<<<< HEAD
             'database' => env('DB_DATABASE', 'sinauin'),
+=======
+            'database' => env('DB_DATABASE', 'laravel'),
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'charset' => env('DB_CHARSET', 'utf8'),
@@ -149,7 +157,11 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
+<<<<<<< HEAD
             'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'sinauin')).'-database-'),
+=======
+            'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-database-'),
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
             'persistent' => env('REDIS_PERSISTENT', false),
         ],
 

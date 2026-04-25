@@ -5,9 +5,15 @@
         </h2>
     </x-slot>
 
+<<<<<<< HEAD
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+=======
+    <div class="py-6 sm:py-12">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4 sm:p-6">
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                 
                 @if ($errors->any())
                     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
@@ -51,9 +57,15 @@
                         <input type="password" name="password_confirmation" id="password_confirmation" class="w-full border-gray-300 rounded-md shadow-sm" required>
                     </div>
 
+<<<<<<< HEAD
                     <div class="flex justify-end gap-4">
                         <a href="{{ route('admin.users.index') }}" class="bg-gray-300 text-gray-800 px-6 py-2 rounded font-bold hover:bg-gray-400">Batal</a>
                         <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded font-bold hover:bg-blue-700">Simpan Akun</button>
+=======
+                    <div class="flex flex-col-reverse sm:flex-row justify-end gap-3 sm:gap-4">
+                        <a href="{{ route('admin.users.index') }}" class="bg-gray-300 text-gray-800 px-6 py-2.5 rounded-lg font-bold hover:bg-gray-400 text-center">Batal</a>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-700">Simpan Akun</button>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                     </div>
                 </form>
 

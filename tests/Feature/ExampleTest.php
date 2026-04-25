@@ -14,6 +14,10 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
+<<<<<<< HEAD
         $response->assertRedirect(route('courses.index'));
+=======
+        $response->assertStatus(200);
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
     }
 }

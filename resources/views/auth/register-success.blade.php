@@ -25,7 +25,11 @@
                 @csrf
                 <div class="flex gap-2">
                     <x-text-input type="email" name="email" placeholder="email@contoh.com" class="flex-1 text-sm" required />
+<<<<<<< HEAD
                     <x-primary-button class="text-xs bg-red-600 hover:bg-red-700 whitespace-nowrap">
+=======
+                    <x-primary-button class="text-xs bg-blue-600 hover:bg-blue-700 whitespace-nowrap">
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                         Kirim Ulang
                     </x-primary-button>
                 </div>
@@ -33,7 +37,11 @@
             </form>
         </div>
 
+<<<<<<< HEAD
         <a href="{{ route('login') }}" class="text-sm font-semibold text-red-600 hover:text-red-700 underline">
+=======
+        <a href="{{ route('login') }}" class="text-sm font-semibold text-blue-600 hover:text-blue-700 underline">
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
             Kembali ke halaman Login
         </a>
     </div>

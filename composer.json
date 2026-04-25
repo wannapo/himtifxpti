@@ -81,11 +81,18 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
+<<<<<<< HEAD
         },
         "platform": {
             "php": "8.3.0"
+=======
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
         }
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c

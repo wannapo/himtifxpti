@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<<<<<<< HEAD
         <title>{{ config('app.name', 'Sinauin') }}</title>
+=======
+        <title>{{ config('app.name', 'Laravel') }}</title>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -223,4 +227,7 @@
         @endif
     </body>
 </html>
+<<<<<<< HEAD
     
+=======
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c

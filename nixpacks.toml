@@ -1,4 +1,5 @@
 [phases.setup]
+<<<<<<< HEAD
 nixPkgs = ["php82", "nodejs_20", "composer"]
 aptPkgs = ["ca-certificates", "git", "unzip", "zip"]
 
@@ -7,3 +8,15 @@ cmds = ["composer install --no-interaction --optimize-autoloader", "npm install"
 
 [start]
 cmd = "php artisan storage:link && php artisan optimize && php artisan migrate --force && php artisan db:seed --force && php artisan queue:work --daemon --tries=3 --timeout=90 & /assets/scripts/start.sh"
+=======
+nixPkgs = ["...", "nodejs_20"]
+
+[phases.install]
+cmds = ["...", "npm install"]
+
+[phases.build]
+cmds = ["..."]
+
+[start]
+cmd = "php artisan storage:link && php artisan clear-compiled && php artisan optimize && php artisan migrate --force && php artisan db:seed --force && php artisan queue:work --daemon --tries=3 --timeout=90 & /assets/scripts/start.sh"
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c

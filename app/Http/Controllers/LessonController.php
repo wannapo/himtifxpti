@@ -11,6 +11,7 @@ use App\Services\ProgressService;
 
 class LessonController extends Controller
 {
+<<<<<<< HEAD
 public function show(Course $course, Lesson $lesson, EnrollmentService $enrollmentService, ProgressService $progressService)
 {
     if ($lesson->module->course_id !== $course->id) {
@@ -51,6 +52,37 @@ public function show(Course $course, Lesson $lesson, EnrollmentService $enrollme
     return view('lessons.show', compact('course', 'lesson', 'isCompleted', 'progressPercent', 'completedLessonIds', 'embed_url'));
 }
 
+=======
+    public function show(Course $course, Lesson $lesson, EnrollmentService $enrollmentService, ProgressService $progressService)
+    {
+        if ($lesson->module->course_id !== $course->id) {
+            abort(404);
+        }
+
+        if ($course->status !== 'published') {
+            if (!auth()->check() || !in_array(auth()->user()->role, ['instructor', 'admin'])) {
+                abort(404, 'Kursus tidak ditemukan atau sedang dalam draft.');
+            }
+        }
+
+        if (!auth()->check() || !$enrollmentService->isUserEnrolled($course->id, auth()->id())) {
+            return redirect()->route('courses.show', $course->slug)->with('error', 'Silakan daftar kursus terlebih dahulu.');
+        }
+
+        $course->load(['modules' => function ($query) {
+            $query->orderBy('order_index');
+        }, 'modules.lessons' => function ($query) {
+            $query->orderBy('order_index');
+        }]);
+
+        $isCompleted = $progressService->isLessonCompleted($lesson->id, auth()->id());
+        $progressPercent = $progressService->getCourseProgress($course, auth()->id());
+        $completedLessonIds = $progressService->getCompletedLessonIds($course, auth()->id());
+
+        return view('lessons.show', compact('course', 'lesson', 'isCompleted', 'progressPercent', 'completedLessonIds'));
+    }
+
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
     public function markComplete(Request $request, Course $course, Lesson $lesson, ProgressService $progressService, \App\Services\GamificationService $gamificationService)
     {
         if ($lesson->module->course_id !== $course->id) {

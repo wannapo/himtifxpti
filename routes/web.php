@@ -28,8 +28,13 @@ Route::get('/debug-auth-check', function () {
 
 Route::get('/debug-mail-test', function () {
     try {
+<<<<<<< HEAD
         \Illuminate\Support\Facades\Mail::raw('Test email dari Sinauin - ' . now(), function ($msg) {
             $msg->to('ahmadd.renaldyy@gmail.com')->subject('Sinauin Mail Test');
+=======
+        \Illuminate\Support\Facades\Mail::raw('Test email dari LMS Collab - ' . now(), function ($msg) {
+            $msg->to('ahmadd.renaldyy@gmail.com')->subject('LMS Mail Test');
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
         });
         return response()->json(['status' => 'Email TERKIRIM ✓', 'mailer' => config('mail.default'), 'queue' => config('queue.default')]);
     } catch (\Throwable $e) {
@@ -39,7 +44,10 @@ Route::get('/debug-mail-test', function () {
 
 Route::get('/', [PageController::class, 'landing'])->name('landing');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+<<<<<<< HEAD
 Route::get('/sponsorship', [PageController::class, 'sponsorship'])->name('sponsorship');
+=======
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
 
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/courses/{course:slug}', [CourseController::class, 'show'])->name('courses.show');

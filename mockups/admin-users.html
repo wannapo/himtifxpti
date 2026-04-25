@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kelola Akun Pengguna - LMSColab</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Figtree', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>[x-cloak] { display: none !important; }</style>
+</head>
+<body class="font-sans antialiased">
+    <div class="min-h-screen bg-gray-100">
+
+        <!-- Navigation -->
+        <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="shrink-0 flex items-center">
+                            <a href="dashboard.html" class="flex items-center space-x-2 group">
+                                <div class="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold group-hover:bg-blue-700 transition-colors">L</div>
+                                <span class="font-bold text-xl text-slate-800 tracking-tight hidden sm:block">LMS<span class="text-blue-600">Colab</span></span>
+                            </a>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <a href="dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Dashboard</a>
+                            <a href="courses.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Katalog Kursus</a>
+                            <a href="instructor.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Kelola Kursus (Instruktur)</a>
+                            <a href="admin-users.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-blue-400 text-sm font-medium leading-5 text-gray-900 transition duration-150 ease-in-out">Kelola Akun (Admin)</a>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex sm:items-center sm:ms-6">
+                        <div class="flex items-center bg-yellow-50 px-3 py-1.5 rounded-full border border-yellow-200 shadow-sm me-4">
+                            <span class="text-yellow-600 font-bold text-sm">🔥 7 Hari</span>
+                        </div>
+                        <div x-data="{ open: false }" class="relative">
+                            <button @click="open = !open" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                <div>Admin LMS</div>
+                                <div class="ms-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                                </div>
+                            </button>
+                            <div x-show="open" @click.away="open = false" x-cloak class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="-me-2 flex items-center sm:hidden">
+                        <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path :class="{'hidden': open, 'inline-flex': !open}" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                <path :class="{'hidden': !open, 'inline-flex': open}" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div :class="{'block': open, 'hidden': !open}" class="hidden sm:hidden">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="dashboard.html" class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Dashboard</a>
+                    <a href="courses.html" class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Katalog Kursus</a>
+                    <a href="instructor.html" class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Kelola Kursus (Instruktur)</a>
+                    <a href="admin-users.html" class="block w-full ps-3 pe-4 py-2 border-l-4 border-blue-400 text-start text-base font-medium text-blue-700 bg-blue-50">Kelola Akun (Admin)</a>
+                </div>
+                <div class="pt-4 pb-1 border-t border-gray-200">
+                    <div class="px-4">
+                        <div class="font-medium text-base text-gray-800">Admin LMS</div>
+                        <div class="font-medium text-sm text-gray-500">admin@example.com</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">Kelola Akun Pengguna</h2>
+            </div>
+        </header>
+
+        <main>
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-lg font-bold text-slate-800">Daftar Pengguna</h3>
+                            <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded font-bold hover:bg-blue-700 transition-colors text-sm">+ Tambah Akun</a>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="border-b p-3 text-sm font-bold text-slate-600">Nama</th>
+                                        <th class="border-b p-3 text-sm font-bold text-slate-600">Email</th>
+                                        <th class="border-b p-3 text-sm font-bold text-slate-600">Role</th>
+                                        <th class="border-b p-3 text-sm font-bold text-slate-600">Tanggal Daftar</th>
+                                        <th class="border-b p-3 text-sm font-bold text-slate-600 text-right">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- User 1: Admin (current user — no delete) -->
+                                    <tr class="hover:bg-gray-50 border-b">
+                                        <td class="p-3 font-medium text-slate-800">Admin LMS</td>
+                                        <td class="p-3 text-slate-600">admin@lmscolab.com</td>
+                                        <td class="p-3">
+                                            <span class="px-2 py-1 text-xs rounded uppercase font-bold bg-blue-100 text-blue-800">admin</span>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500">01 Jan 2026</td>
+                                        <td class="p-3 text-right space-x-2">
+                                            <a href="#" class="text-blue-600 hover:text-blue-900 font-semibold text-sm">Edit</a>
+                                        </td>
+                                    </tr>
+                                    <!-- User 2: Instructor -->
+                                    <tr class="hover:bg-gray-50 border-b">
+                                        <td class="p-3 font-medium text-slate-800">Instruktur Demo</td>
+                                        <td class="p-3 text-slate-600">instruktur@example.com</td>
+                                        <td class="p-3">
+                                            <span class="px-2 py-1 text-xs rounded uppercase font-bold bg-purple-100 text-purple-800">instructor</span>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500">15 Jan 2026</td>
+                                        <td class="p-3 text-right space-x-2">
+                                            <a href="#" class="text-blue-600 hover:text-blue-900 font-semibold text-sm">Edit</a>
+                                            <button class="text-red-600 hover:text-red-900 font-semibold text-sm">Hapus</button>
+                                        </td>
+                                    </tr>
+                                    <!-- User 3: Student -->
+                                    <tr class="hover:bg-gray-50 border-b">
+                                        <td class="p-3 font-medium text-slate-800">Budi Santoso</td>
+                                        <td class="p-3 text-slate-600">budi@example.com</td>
+                                        <td class="p-3">
+                                            <span class="px-2 py-1 text-xs rounded uppercase font-bold bg-green-100 text-green-800">student</span>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500">20 Jan 2026</td>
+                                        <td class="p-3 text-right space-x-2">
+                                            <a href="#" class="text-blue-600 hover:text-blue-900 font-semibold text-sm">Edit</a>
+                                            <button class="text-red-600 hover:text-red-900 font-semibold text-sm">Hapus</button>
+                                        </td>
+                                    </tr>
+                                    <!-- User 4: Student -->
+                                    <tr class="hover:bg-gray-50 border-b">
+                                        <td class="p-3 font-medium text-slate-800">Siti Rahayu</td>
+                                        <td class="p-3 text-slate-600">siti@example.com</td>
+                                        <td class="p-3">
+                                            <span class="px-2 py-1 text-xs rounded uppercase font-bold bg-green-100 text-green-800">student</span>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500">02 Feb 2026</td>
+                                        <td class="p-3 text-right space-x-2">
+                                            <a href="#" class="text-blue-600 hover:text-blue-900 font-semibold text-sm">Edit</a>
+                                            <button class="text-red-600 hover:text-red-900 font-semibold text-sm">Hapus</button>
+                                        </td>
+                                    </tr>
+                                    <!-- User 5: Student -->
+                                    <tr class="hover:bg-gray-50 border-b">
+                                        <td class="p-3 font-medium text-slate-800">Andi Pratama</td>
+                                        <td class="p-3 text-slate-600">andi@example.com</td>
+                                        <td class="p-3">
+                                            <span class="px-2 py-1 text-xs rounded uppercase font-bold bg-green-100 text-green-800">student</span>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500">10 Feb 2026</td>
+                                        <td class="p-3 text-right space-x-2">
+                                            <a href="#" class="text-blue-600 hover:text-blue-900 font-semibold text-sm">Edit</a>
+                                            <button class="text-red-600 hover:text-red-900 font-semibold text-sm">Hapus</button>
+                                        </td>
+                                    </tr>
+                                    <!-- User 6: Instructor -->
+                                    <tr class="hover:bg-gray-50 border-b">
+                                        <td class="p-3 font-medium text-slate-800">Rizky Mahendra</td>
+                                        <td class="p-3 text-slate-600">rizky@example.com</td>
+                                        <td class="p-3">
+                                            <span class="px-2 py-1 text-xs rounded uppercase font-bold bg-purple-100 text-purple-800">instructor</span>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500">15 Feb 2026</td>
+                                        <td class="p-3 text-right space-x-2">
+                                            <a href="#" class="text-blue-600 hover:text-blue-900 font-semibold text-sm">Edit</a>
+                                            <button class="text-red-600 hover:text-red-900 font-semibold text-sm">Hapus</button>
+                                        </td>
+                                    </tr>
+                                    <!-- User 7: Student -->
+                                    <tr class="hover:bg-gray-50 border-b">
+                                        <td class="p-3 font-medium text-slate-800">Dewi Lestari</td>
+                                        <td class="p-3 text-slate-600">dewi@example.com</td>
+                                        <td class="p-3">
+                                            <span class="px-2 py-1 text-xs rounded uppercase font-bold bg-green-100 text-green-800">student</span>
+                                        </td>
+                                        <td class="p-3 text-sm text-gray-500">01 Mar 2026</td>
+                                        <td class="p-3 text-right space-x-2">
+                                            <a href="#" class="text-blue-600 hover:text-blue-900 font-semibold text-sm">Edit</a>
+                                            <button class="text-red-600 hover:text-red-900 font-semibold text-sm">Hapus</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>

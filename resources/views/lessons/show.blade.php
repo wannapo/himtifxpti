@@ -1,6 +1,10 @@
 <x-app-layout>
     <!-- Top Bar -->
+<<<<<<< HEAD
     <div class="bg-white text-slate-800 px-6 py-4 border-b border-slate-200 flex justify-between items-center shadow-sm sticky top-0 z-40">
+=======
+    <div class="bg-white text-slate-800 px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-200 flex justify-between items-center shadow-sm sticky top-0 z-40">
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
         <div class="text-sm md:text-base truncate flex items-center w-full max-w-7xl mx-auto">
             <span class="text-slate-500 hidden sm:inline font-medium">{{ $course->title }}</span> 
             <span class="mx-3 text-slate-300 hidden sm:inline">/</span> 
@@ -18,8 +22,13 @@
          @if($lesson->has_workspace) x-data="workspaceEditor()" @endif>
         
         <!-- Panel 1: Content / Reading -->
+<<<<<<< HEAD
         <div class="w-full @if($lesson->has_workspace) lg:w-3/12 @else md:w-7/12 @endif p-6 md:p-8 md:overflow-y-auto border-b md:border-b-0 md:border-r border-slate-200 bg-white" style="max-height: calc(100vh - 73px);">
             <h1 class="text-2xl md:text-3xl font-extrabold mb-6 text-slate-900 leading-tight tracking-tight">{{ $lesson->title }}</h1>
+=======
+        <div class="w-full @if($lesson->has_workspace) lg:w-3/12 @else md:w-7/12 @endif p-4 sm:p-6 md:p-8 md:overflow-y-auto border-b md:border-b-0 md:border-r border-slate-200 bg-white" style="max-height: calc(100vh - 73px);">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold mb-4 sm:mb-6 text-slate-900 leading-tight tracking-tight">{{ $lesson->title }}</h1>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
             
             @if($lesson->content_type === 'video')
                 <div class="aspect-video mb-8 rounded-xl overflow-hidden border border-slate-200 bg-slate-900 shadow-sm relative z-10">
@@ -28,19 +37,31 @@
                             <source src="{{ asset($lesson->video_url) }}" type="video/mp4">
                         </video>
                     @else
+<<<<<<< HEAD
                         <iframe src="{{ $embed_url ?? $lesson->video_url }}" class="w-full h-full border-none" allowfullscreen></iframe>
+=======
+                        <iframe src="{{ $lesson->video_url }}" class="w-full h-full border-none" allowfullscreen></iframe>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                     @endif
                 </div>
             @endif
 
+<<<<<<< HEAD
             <div class="prose prose-md max-w-none prose-slate leading-relaxed font-sans mb-12">
+=======
+            <div class="prose prose-sm sm:prose-md max-w-none prose-slate leading-relaxed font-sans mb-8 sm:mb-12">
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                 {!! nl2br(e($lesson->content)) !!}
             </div>
         </div>
 
         @if($lesson->has_workspace)
         <!-- Panel 2: Code Editor (Only if has_workspace) -->
+<<<<<<< HEAD
         <div class="w-full lg:w-5/12 bg-slate-900 border-b md:border-b-0 md:border-r border-slate-700 flex flex-col pt-2 h-screen lg:h-[calc(100vh-73px)]">
+=======
+        <div class="w-full lg:w-5/12 bg-slate-900 border-b md:border-b-0 md:border-r border-slate-700 flex flex-col pt-2 h-[60vh] sm:h-[70vh] lg:h-[calc(100vh-73px)]">
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
             <!-- Editor Tabs -->
             <div class="flex px-4 gap-1 mb-2">
                 <button @click="activeTab = 'html'" :class="{'bg-[#1e1e1e] text-green-400': activeTab === 'html', 'bg-slate-800 text-slate-400 hover:bg-slate-700': activeTab !== 'html'}" class="px-4 py-2 rounded-t-lg font-mono text-sm font-bold transition-colors">index.html</button>
@@ -74,8 +95,13 @@
             </div>
             @endif
 
+<<<<<<< HEAD
             <div class="p-6 flex-grow @if($lesson->has_workspace) lg:h-1/2 overflow-y-auto @endif">
                 <h3 class="font-bold @if($lesson->has_workspace) text-xl @else text-2xl @endif mb-6 text-slate-800">Evaluasi & Kelulusan</h3>
+=======
+            <div class="p-4 sm:p-6 flex-grow @if($lesson->has_workspace) lg:h-1/2 overflow-y-auto @endif">
+                <h3 class="font-bold @if($lesson->has_workspace) text-lg sm:text-xl @else text-xl sm:text-2xl @endif mb-4 sm:mb-6 text-slate-800">Evaluasi & Kelulusan</h3>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                 
                 <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
                      x-data="{
@@ -113,9 +139,15 @@
                                 @if(!empty($lesson->quiz_options) && is_array($lesson->quiz_options))
                                     @foreach($lesson->quiz_options as $idx => $opt)
                                         <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-all text-sm md:text-base"
+<<<<<<< HEAD
                                                :class="{'border-red-400 bg-red-50 ring-1 ring-red-400': selectedOption === {{ $idx }}, 'border-slate-200': selectedOption !== {{ $idx }}}">
                                             <input type="radio" name="quiz_answer" value="{{ $idx }}" x-model.number="selectedOption" class="w-4 h-4 text-red-600 border-slate-300 focus:ring-red-500">
                                             <span class="ml-3 font-medium text-slate-700" :class="{'text-red-900 font-bold': selectedOption === {{ $idx }}}">{{ $opt }}</span>
+=======
+                                               :class="{'border-blue-400 bg-blue-50 ring-1 ring-blue-400': selectedOption === {{ $idx }}, 'border-slate-200': selectedOption !== {{ $idx }}}">
+                                            <input type="radio" name="quiz_answer" value="{{ $idx }}" x-model.number="selectedOption" class="w-4 h-4 text-blue-600 border-slate-300 focus:ring-blue-500">
+                                            <span class="ml-3 font-medium text-slate-700" :class="{'text-blue-900 font-bold': selectedOption === {{ $idx }}}">{{ $opt }}</span>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                                         </label>
                                     @endforeach
                                 @endif
@@ -126,7 +158,11 @@
                                 Jawaban salah atau belum dipilih. Coba lagi!
                             </div>
 
+<<<<<<< HEAD
                             <button @click="checkAnswer()" :disabled="selectedOption === null" class="w-full flex justify-center py-3 bg-red-600 text-white rounded-lg font-bold hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed">
+=======
+                            <button @click="checkAnswer()" :disabled="selectedOption === null" class="w-full flex justify-center py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed">
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                                 Periksa Jawaban
                             </button>
                         </div>
@@ -184,19 +220,31 @@
                     
                     <form action="{{ route('comments.store', $lesson->id) }}" method="POST" class="mb-6">
                         @csrf
+<<<<<<< HEAD
                         <textarea name="body" rows="2" class="w-full border border-slate-300 rounded-lg p-3 mb-2 focus:border-red-500 focus:ring focus:ring-red-100 shadow-sm text-sm text-slate-700" placeholder="Tanyakan atau bagikan sesuatu..." required></textarea>
+=======
+                        <textarea name="body" rows="2" class="w-full border border-slate-300 rounded-lg p-3 mb-2 focus:border-blue-500 focus:ring focus:ring-blue-100 shadow-sm text-sm text-slate-700" placeholder="Tanyakan atau bagikan sesuatu..." required></textarea>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                         @error('body')
                             <p class="text-red-500 text-xs mb-2 font-semibold">{{ $message }}</p>
                         @enderror
                         <div class="flex justify-end">
+<<<<<<< HEAD
                             <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold py-1.5 px-4 rounded-md">Kirim</button>
+=======
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-1.5 px-4 rounded-md">Kirim</button>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                         </div>
                     </form>
 
                     <div class="space-y-3">
                         @forelse($lesson->comments()->latest()->get() as $comment)
                             <div class="border border-slate-100 p-4 bg-white rounded-lg flex gap-3 shadow-sm">
+<<<<<<< HEAD
                                 <div class="w-8 h-8 bg-red-50 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-red-600 border border-red-100">
+=======
+                                <div class="w-8 h-8 bg-blue-50 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-blue-600 border border-blue-100">
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                                     {{ strtoupper(substr($comment->user->name, 0, 1)) }}
                                 </div>
                                 <div class="flex-grow">

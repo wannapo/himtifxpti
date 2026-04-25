@@ -112,7 +112,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'sinauin')).'-cache-'),
+=======
+    'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-cache-'),
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
 
     /*
     |--------------------------------------------------------------------------

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Katalog Kursus - LMSColab</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Figtree', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased">
+    <div class="min-h-screen bg-gray-100">
+
+        <!-- Navigation -->
+        <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="shrink-0 flex items-center">
+                            <a href="dashboard.html" class="flex items-center space-x-2 group">
+                                <div class="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold group-hover:bg-blue-700 transition-colors">L</div>
+                                <span class="font-bold text-xl text-slate-800 tracking-tight hidden sm:block">LMS<span class="text-blue-600">Colab</span></span>
+                            </a>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <a href="dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Dashboard</a>
+                            <a href="courses.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-blue-400 text-sm font-medium leading-5 text-gray-900 transition duration-150 ease-in-out">Katalog Kursus</a>
+                            <a href="instructor.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Kelola Kursus (Instruktur)</a>
+                            <a href="admin-users.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 transition duration-150 ease-in-out">Kelola Akun (Admin)</a>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex sm:items-center sm:ms-6">
+                        <div class="flex items-center bg-yellow-50 px-3 py-1.5 rounded-full border border-yellow-200 shadow-sm me-4">
+                            <span class="text-yellow-600 font-bold text-sm">🔥 7 Hari</span>
+                        </div>
+                        <div x-data="{ open: false }" class="relative">
+                            <button @click="open = !open" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                <div>Budi Santoso</div>
+                                <div class="ms-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                                </div>
+                            </button>
+                            <div x-show="open" @click.away="open = false" x-cloak class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hamburger -->
+                    <div class="-me-2 flex items-center sm:hidden">
+                        <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path :class="{'hidden': open, 'inline-flex': !open}" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                <path :class="{'hidden': !open, 'inline-flex': open}" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Responsive Navigation -->
+            <div :class="{'block': open, 'hidden': !open}" class="hidden sm:hidden">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="dashboard.html" class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 transition duration-150 ease-in-out">Dashboard</a>
+                    <a href="courses.html" class="block w-full ps-3 pe-4 py-2 border-l-4 border-blue-400 text-start text-base font-medium text-blue-700 bg-blue-50 transition duration-150 ease-in-out">Katalog Kursus</a>
+                </div>
+                <div class="pt-4 pb-1 border-t border-gray-200">
+                    <div class="px-4">
+                        <div class="font-medium text-base text-gray-800">Budi Santoso</div>
+                        <div class="font-medium text-sm text-gray-500">budi@example.com</div>
+                    </div>
+                    <div class="mt-3 space-y-1">
+                        <a href="#" class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 transition duration-150 ease-in-out">Profile</a>
+                        <a href="#" class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 transition duration-150 ease-in-out">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Hero / Search Section -->
+            <div class="bg-slate-50 border-b border-slate-200 py-16 px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight mb-4">
+                        Tingkatkan Keahlian Coding Anda.
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto font-medium mb-8">
+                        Bangun portofolio profesional dan dapatkan sertifikat yang diakui industri. Mulai sekarang, gratis.
+                    </p>
+                    <div class="mt-8 flex justify-center w-full max-w-lg mx-auto">
+                        <form class="flex w-full shadow-sm rounded-lg overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all">
+                            <input type="text" placeholder="Cari sertifikasi atau kursus..." class="w-full border-none p-4 text-base focus:ring-0 text-slate-700">
+                            <button type="submit" class="bg-blue-600 text-white px-8 font-semibold hover:bg-blue-700 transition-colors">Cari</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course List -->
+            <div class="py-12 bg-white min-h-screen">
+                <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
+                    <h2 class="text-2xl font-bold mb-8 text-slate-800">Sertifikasi yang Tersedia</h2>
+                    
+                    <div class="grid gap-6">
+
+                        <!-- Course Card 1 -->
+                        <a href="course-detail.html" class="block bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div class="flex items-center space-x-6 flex-grow">
+                                    <div class="w-24 h-24 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0 shadow-sm">
+                                        <img src="https://placehold.co/150x150/e2e8f0/475569?text=HTML" alt="Responsive Web Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center space-x-3 mb-1">
+                                            <h3 class="text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                Responsive Web Design Certification
+                                            </h3>
+                                        </div>
+                                        <p class="text-slate-500 text-sm leading-relaxed">Pelajari dasar-dasar HTML dan CSS untuk membangun halaman web yang responsif. Dari elemen dasar hingga Flexbox dan CSS Grid.</p>
+                                    </div>
+                                </div>
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center flex-shrink-0">
+                                    <span class="bg-blue-50 text-blue-600 px-5 py-2 rounded-lg font-semibold text-sm border border-blue-100">Buka Kelas &rarr;</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Course Card 2 -->
+                        <a href="course-detail.html" class="block bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div class="flex items-center space-x-6 flex-grow">
+                                    <div class="w-24 h-24 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0 shadow-sm">
+                                        <img src="https://placehold.co/150x150/fef3c7/92400e?text=JS" alt="JavaScript Algorithms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center space-x-3 mb-1">
+                                            <h3 class="text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                JavaScript Algorithms and Data Structures
+                                            </h3>
+                                        </div>
+                                        <p class="text-slate-500 text-sm leading-relaxed">Kuasai fundamental JavaScript, mulai dari variabel, loop, fungsi, hingga struktur data dan algoritma tingkat lanjut.</p>
+                                    </div>
+                                </div>
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center flex-shrink-0">
+                                    <span class="bg-blue-50 text-blue-600 px-5 py-2 rounded-lg font-semibold text-sm border border-blue-100">Buka Kelas &rarr;</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Course Card 3 -->
+                        <a href="course-detail.html" class="block bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div class="flex items-center space-x-6 flex-grow">
+                                    <div class="w-24 h-24 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0 shadow-sm">
+                                        <img src="https://placehold.co/150x150/dbeafe/1e40af?text=React" alt="Front End Libraries" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center space-x-3 mb-1">
+                                            <h3 class="text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                Front End Development Libraries
+                                            </h3>
+                                        </div>
+                                        <p class="text-slate-500 text-sm leading-relaxed">Pelajari library populer seperti React, Redux, dan Bootstrap untuk membangun antarmuka web yang modern dan interaktif.</p>
+                                    </div>
+                                </div>
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center flex-shrink-0">
+                                    <span class="bg-blue-50 text-blue-600 px-5 py-2 rounded-lg font-semibold text-sm border border-blue-100">Buka Kelas &rarr;</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Course Card 4 -->
+                        <a href="course-detail.html" class="block bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div class="flex items-center space-x-6 flex-grow">
+                                    <div class="w-24 h-24 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0 shadow-sm">
+                                        <img src="https://placehold.co/150x150/d1fae5/065f46?text=PHP" alt="Back End Development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center space-x-3 mb-1">
+                                            <h3 class="text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                Back End Development with PHP & Laravel
+                                            </h3>
+                                        </div>
+                                        <p class="text-slate-500 text-sm leading-relaxed">Bangun aplikasi web back-end yang kuat menggunakan PHP dan framework Laravel. Dari routing hingga deployment.</p>
+                                    </div>
+                                </div>
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center flex-shrink-0">
+                                    <span class="bg-blue-50 text-blue-600 px-5 py-2 rounded-lg font-semibold text-sm border border-blue-100">Buka Kelas &rarr;</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Course Card 5 -->
+                        <a href="course-detail.html" class="block bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group">
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div class="flex items-center space-x-6 flex-grow">
+                                    <div class="w-24 h-24 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0 shadow-sm">
+                                        <img src="https://placehold.co/150x150/fce7f3/9d174d?text=DB" alt="Relational Database" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center space-x-3 mb-1">
+                                            <h3 class="text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                Relational Database Certification
+                                            </h3>
+                                        </div>
+                                        <p class="text-slate-500 text-sm leading-relaxed">Pelajari cara merancang dan mengelola database relasional menggunakan SQL, PostgreSQL, dan teknik normalisasi data.</p>
+                                    </div>
+                                </div>
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center flex-shrink-0">
+                                    <span class="bg-blue-50 text-blue-600 px-5 py-2 rounded-lg font-semibold text-sm border border-blue-100">Buka Kelas &rarr;</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>

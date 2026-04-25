@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 <x-app-layout>
     <x-slot name="title">Sinauin - Platform Belajar Coding Kolaboratif</x-slot>
 
     <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 overflow-hidden">
+=======
+<x-public-layout>
+    <x-slot name="title">LMSColab - Platform Belajar Coding Kolaboratif</x-slot>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 overflow-hidden">
+        <!-- Decorative shapes -->
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-10 left-10 w-72 h-72 bg-yellow-400 rounded-full blur-3xl"></div>
             <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
@@ -14,7 +23,11 @@
                     <span class="text-yellow-300">Interaktif &amp; Kolaboratif</span>
                 </h1>
                 <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+<<<<<<< HEAD
                     Sinauin adalah platform pembelajaran coding yang dirancang khusus untuk Siswa. Belajar melalui video, praktik langsung, dan modul interaktif semuanya gratis.
+=======
+                    LMSColab adalah platform pembelajaran coding yang dirancang khusus untuk Siswa. Belajar melalui video, praktik langsung, dan modul interaktif semuanya gratis.
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="{{ route('register') }}" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg">
@@ -24,6 +37,10 @@
                         Pelajari Lebih Lanjut
                     </a>
                 </div>
+<<<<<<< HEAD
+=======
+                <!-- Stats row -->
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                 <div class="mt-14 flex flex-wrap gap-8 justify-center text-white/90">
                     <div class="text-center">
                         <div class="text-3xl font-extrabold">{{ $stats['students'] }}+</div>
@@ -42,19 +59,30 @@
         </div>
     </section>
 
+<<<<<<< HEAD
+=======
+    <!-- ==================== ABOUT WEBSITE ==================== -->
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Tentang Platform</span>
+<<<<<<< HEAD
                     <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2 mb-6">Apa Itu Sinauin?</h2>
                     <p class="text-gray-600 text-lg leading-relaxed mb-4">
                         Sinauin adalah <strong>Learning Management System</strong> yang dibangun sebagai proyek kolaborasi antara <strong>HIMTIF</strong> (Himpunan Mahasiswa Teknik Informatika) dan <strong>HIMA PTI</strong> (Himpunan Mahasiswa Pendidikan Teknik Informatika).
+=======
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2 mb-6">Apa Itu LMSColab?</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                        LMSColab adalah <strong>Learning Management System</strong> yang dibangun sebagai proyek kolaborasi antara <strong>HIMTIF</strong> (Himpunan Mahasiswa Teknik Informatika) dan <strong>HIMA PTI</strong> (Himpunan Mahasiswa Pendidikan Teknik Informatika).
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                     </p>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">
                         Platform ini menyediakan lingkungan belajar coding yang terstruktur dan interaktif, dilengkapi dengan editor kode langsung, kuis, serta sistem gamifikasi untuk menjaga motivasi belajar.
                     </p>
                     <div class="flex items-center gap-4">
+<<<<<<< HEAD
                         <div class="flex -space-x-3">
                             {{-- Logo HIMTIF --}}
                             <div class="w-10 h-10 rounded-full bg-white p-1.5 flex items-center justify-center overflow-hidden border-2 border-white shadow-sm z-20">
@@ -66,6 +94,13 @@
                             </div>
                         </div>
                         <span class="text-sm text-gray-500 font-medium">Kolaborasi antar himpunan mahasiswa</span>
+=======
+                        <div class="flex -space-x-2">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm border-2 border-white">H</div>
+                            <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-sm border-2 border-white">P</div>
+                        </div>
+                        <span class="text-sm text-gray-500">Kolaborasi antar himpunan mahasiswa</span>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                     </div>
                 </div>
                 <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 md:p-12">
@@ -97,11 +132,19 @@
         </div>
     </section>
 
+<<<<<<< HEAD
+=======
+    <!-- ==================== BENEFITS ==================== -->
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
     <section id="benefits" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14">
                 <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Keunggulan</span>
+<<<<<<< HEAD
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Mengapa Belajar di Sinauin?</h2>
+=======
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2 mb-4">Mengapa Belajar di LMSColab?</h2>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                 <p class="text-gray-600 text-lg">Platform yang dirancang khusus untuk kebutuhan belajar mahasiswa informatika.</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -139,6 +182,10 @@
         </div>
     </section>
 
+<<<<<<< HEAD
+=======
+    <!-- ==================== HOW IT WORKS ==================== -->
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
     <section id="how-it-works" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14">
@@ -166,6 +213,10 @@
         </div>
     </section>
 
+<<<<<<< HEAD
+=======
+    <!-- ==================== LEARNING METHODS ==================== -->
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
     <section class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14">
@@ -193,6 +244,10 @@
         </div>
     </section>
 
+<<<<<<< HEAD
+=======
+    <!-- ==================== COURSE PREVIEW ==================== -->
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
     <section id="courses" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14">
@@ -233,13 +288,21 @@
         </div>
     </section>
 
+<<<<<<< HEAD
+=======
+    <!-- ==================== CTA ==================== -->
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
     <section class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-12 md:p-16 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-400 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/3"></div>
                 <div class="relative z-10">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Siap Mulai Belajar Coding?</h2>
+<<<<<<< HEAD
                     <p class="text-blue-100 text-lg mb-8 max-w-xl mx-auto">Bergabung dengan ratusan mahasiswa yang sudah meningkatkan skill coding mereka di Sinauin. Gratis selamanya.</p>
+=======
+                    <p class="text-blue-100 text-lg mb-8 max-w-xl mx-auto">Bergabung dengan ratusan mahasiswa yang sudah meningkatkan skill coding mereka di LMSColab. Gratis selamanya.</p>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="{{ route('register') }}" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg">
                             Daftar Sekarang - Gratis!
@@ -252,4 +315,8 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD
 </x-app-layout>
+=======
+</x-public-layout>
+>>>>>>> 16daf2ab4b3ba50f6b77b31ce427a4794e96c73c
